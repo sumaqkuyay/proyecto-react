@@ -18,12 +18,16 @@ const App = () => (
       </div>
     </div>
     <div className="ed-grid m-grid-3">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        title="Aprendiendo React IMPRIMIENDO PROPS"
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+        price="30usd"
+      />
+      <Card
+        title="Aprendiendo React IMPRIMIENDO PROPS"
+        image="https://cdn5.f-cdn.com/contestentries/690017/19944121/57ad5f33da095_thumb900.jpg"
+        price="50usd"
+      />
     </div>
   </>
 );
