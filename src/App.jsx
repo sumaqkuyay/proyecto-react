@@ -21,6 +21,9 @@ const App = () => (
       <Card />
       <Card />
       <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   </>
 );
