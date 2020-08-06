@@ -3,6 +3,117 @@ import React from 'react';
 import './styles/styles.scss';
 import Card from './Card';
 
+const products = [
+  {
+    title: 'Cafe Americano',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 5,
+    productName: 'Café Americano',
+  },
+  {
+    title: 'Cafe con Leche',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 7,
+    productName: 'Café con Leche',
+  },
+  {
+    title: 'Sandwich de Jamón y Queso',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 10,
+    productName: 'Sandwich de Jamón y Queso',
+  },
+  {
+    title: 'Jugo de Frutas Natural',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 7,
+    productName: 'Jugo de Frutas Natural',
+  },
+  {
+    title: 'Hamburguesa Simple Res',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 10,
+    productName: 'Hamburguesa Simple Res',
+  },
+  {
+    title: 'Hamburguesa Doble Res',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 15,
+    productName: 'Hamburguesa Doble Res',
+  },
+  {
+    title: 'Hamburguesa Simple Pollo',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 10,
+    productName: 'Hamburguesa Simple Pollo',
+  },
+  {
+    title: 'Hamburguesa Doble Pollo',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 15,
+    productName: 'Hamburguesa Doble Pollo',
+  },
+  {
+    title: 'Hamburguesa Simple Vegetariana',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 10,
+    productName: 'Hamburguesa Simple Vegetariana',
+  },
+  {
+    title: 'Hamburguesa Doble Vegetariana',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 15,
+    productName: 'Hamburguesa Doble Vegetariana',
+  },
+  {
+    title: 'Papas Fritas',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 5,
+    productName: 'Papas Fritas',
+  },
+  {
+    title: 'Aros de Cebolla',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 5,
+    productName: 'Aros de Cebolla',
+  },
+  {
+    title: 'Agua 500ml',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 5,
+    productName: 'Agua 500ml',
+  },
+  {
+    title: 'Agua 750ml',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 7,
+    productName: 'Agua 750ml',
+  },
+  {
+    title: 'Bebida/gaseosa 500ml',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 7,
+    productName: 'Bebida/gaseosa 500ml',
+  },
+  {
+    title: 'Bebida/gaseosa 750ml',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 10,
+    productName: 'Bebida/gaseosa 750ml',
+  },
+  {
+    title: 'Jamón',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 1,
+    productName: 'Jamón',
+  },
+  {
+    title: 'Queso',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    price: 1,
+    productName: 'Queso',
+  },
+];
+
 const App = () => (
   <>
     <div className="main-banner img-container l-section" id="main-banner">
@@ -10,7 +121,7 @@ const App = () => (
         <div className="lg-cols-4 lg-x-2">
           <img className="main-banner__img" src="https://www.familysearch.org/blog/es/wp-content/uploads/sites/5/2015/10/the-power-of-small.jpg" alt="banner" />
           <div className="main-banner__data s-center">
-            <p className="t2 s-mb-0">Banner Sabina modificado SASA</p>
+            <p className="t2 s-mb-0">Banner Sabina modificado </p>
             <p> Subtítulo del banner</p>
             <a href="https://reactjs.org" className="button">Botón del banner</a>
           </div>
@@ -18,16 +129,10 @@ const App = () => (
       </div>
     </div>
     <div className="ed-grid m-grid-3">
-      <Card
-        title="Aprendiendo React IMPRIMIENDO PROPS"
-        image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
-        price="30usd"
-      />
-      <Card
-        title="Aprendiendo React IMPRIMIENDO PROPS"
-        image="https://cdn5.f-cdn.com/contestentries/690017/19944121/57ad5f33da095_thumb900.jpg"
-        price="50usd"
-      />
+      {
+        // eslint-disable-next-line max-len
+        products.map((element) => <Card title={element.title} image={element.image} price={element.price} productName={element.productName} />)
+      }
     </div>
   </>
 );
