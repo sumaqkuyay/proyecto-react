@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const mayorDeEdad = (edad) => edad > 18;
+// const mayorDeEdad = (edad) => edad > 18;
 
 // const persona = { nombre: 'Sabina', apellido: 'CanchumaniHuaman', edad: 26 };
 

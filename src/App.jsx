@@ -2,8 +2,10 @@ import React from 'react';
 // import logo from './logo.svg';
 import './styles/styles.scss';
 import Card from './Card';
+import Header from './Header';
+import Formulario from './Formulario';
 
-const products = [
+/* const products = [
   {
     title: 'Cafe Americano',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
@@ -102,7 +104,7 @@ const products = [
   },
   {
     title: 'Jamón',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    image: '',
     price: 1,
     productName: 'Jamón',
   },
@@ -112,28 +114,13 @@ const products = [
     price: 1,
     productName: 'Queso',
   },
-];
+]; */
 
 const App = () => (
   <>
-    <div className="main-banner img-container l-section" id="main-banner">
-      <div className="ed-grid lg-grid-6">
-        <div className="lg-cols-4 lg-x-2">
-          <img className="main-banner__img" src="https://www.familysearch.org/blog/es/wp-content/uploads/sites/5/2015/10/the-power-of-small.jpg" alt="banner" />
-          <div className="main-banner__data s-center">
-            <p className="t2 s-mb-0">Banner Sabina modificado </p>
-            <p> Subtítulo del banner</p>
-            <a href="https://reactjs.org" className="button">Botón del banner</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="ed-grid m-grid-3">
-      {
-        // eslint-disable-next-line max-len
-        products.map((element) => <Card title={element.title} image={element.image} price={element.price} productName={element.productName} />)
-      }
-    </div>
+    <Header />
+    <Formulario />
+
   </>
 );
 
@@ -176,5 +163,12 @@ const App = () => (
       </a>
     </header>
   </div>
+
+   <div className="ed-grid m-grid-3">
+      {
+        // eslint-disable-next-line max-len
+        products.map((element) => <Card title={element.title} image={element.image} price={element.price} productName={element.productName} />)
+      }
+    </div>
 );
 */
