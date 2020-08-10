@@ -1,190 +1,139 @@
 import React from 'react';
-// import logo from './logo.svg';
-import './styles/styles.scss';
-// import Card from './Card';
+import Card from './Card';
 
-// import Formulario from './Formulario';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CourseGrid from './CourseGrid';
-import Header from './Header';
-import Formulario from './Formulario';
-import Course from './Course';
-
-/* const products = [
+const products = [
   {
+    id: 1,
     title: 'Cafe Americano',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 5,
     productName: 'Café Americano',
   },
   {
+    id: 2,
     title: 'Cafe con Leche',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 7,
     productName: 'Café con Leche',
   },
   {
+    id: 3,
     title: 'Sandwich de Jamón y Queso',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 10,
     productName: 'Sandwich de Jamón y Queso',
   },
   {
+    id: 4,
     title: 'Jugo de Frutas Natural',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 7,
     productName: 'Jugo de Frutas Natural',
   },
   {
+    id: 5,
     title: 'Hamburguesa Simple Res',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 10,
     productName: 'Hamburguesa Simple Res',
   },
   {
+    id: 6,
     title: 'Hamburguesa Doble Res',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 15,
     productName: 'Hamburguesa Doble Res',
   },
   {
+    id: 7,
     title: 'Hamburguesa Simple Pollo',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 10,
     productName: 'Hamburguesa Simple Pollo',
   },
   {
+    id: 8,
     title: 'Hamburguesa Doble Pollo',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 15,
     productName: 'Hamburguesa Doble Pollo',
   },
   {
+    id: 9,
     title: 'Hamburguesa Simple Vegetariana',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 10,
     productName: 'Hamburguesa Simple Vegetariana',
   },
   {
+    id: 10,
     title: 'Hamburguesa Doble Vegetariana',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 15,
     productName: 'Hamburguesa Doble Vegetariana',
   },
   {
+    id: 11,
     title: 'Papas Fritas',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 5,
     productName: 'Papas Fritas',
   },
   {
+    id: 12,
     title: 'Aros de Cebolla',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 5,
     productName: 'Aros de Cebolla',
   },
   {
+    id: 13,
     title: 'Agua 500ml',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 5,
     productName: 'Agua 500ml',
   },
   {
+    id: 14,
     title: 'Agua 750ml',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 7,
     productName: 'Agua 750ml',
   },
   {
+    id: 15,
     title: 'Bebida/gaseosa 500ml',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 7,
     productName: 'Bebida/gaseosa 500ml',
   },
   {
+    id: 16,
     title: 'Bebida/gaseosa 750ml',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 10,
     productName: 'Bebida/gaseosa 750ml',
   },
   {
+    id: 17,
     title: 'Jamón',
     image: '',
     price: 1,
     productName: 'Jamón',
   },
   {
+    id: 18,
     title: 'Queso',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
     price: 1,
     productName: 'Queso',
   },
-]; */
+];
 
-const App = () => (
-  // envolver la aplicación dentro de nuestro componente Router
-  <Router>
-    <Switch>
-      <Route path="/" exact component={Header} />
-      <Route path="/cursos/:id" component={Course} />
-      <Route path="/cursos" component={CourseGrid} />
-      <Route path="/formulario" component={() => <Formulario />} />
-      <Route component={() => (
-        <div className="ed-grid">
-          <h1>error 404</h1>
-          <span> pagina no encontrada</span>
-        </div>
-      )}
-      />
-    </Switch>
-  </Router>
-);
-
-export default App;
-
-// Toda etiqueta debe cerrarse
-// Los componentes deben devolver un solo elemento padre
-// Apoyarse de los fragments cuando necesito devolver 2 elementos <> hijos</>
-// img siempre se cierra y se pone un alt=""
-// class pasa a ser className
-
-/* const App = () => (
-  <>
-    <div className="saludo">
-      <h1> Hola Mundo</h1>
-      <p> Hola , saludando desde mi componente app.js</p>
-    </div>
-    <div>
-      <img src="https://www.online-image-editor.com/styles/2019/images/power_girl_editor.png" alt="" />
-    </div>
-  </>
-); */
-
-/*
-const App = () => (
-
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Hola mundo desde mi archivo APP.jsx c:
-      </p>
-      <a
-        lassName="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+const CourseGrid = () => (
+  <div className="ed-grid m-grid-4">
+    { products.map((element) => (
+      <Card key={element.id} title={element.title} image={element.image} price={element.price} productName={element.productName} />))}
   </div>
-
-   <div className="ed-grid m-grid-3">
-      {
-        // eslint-disable-next-line max-len
-        products.map((element) => <Card title={element.title} image={element.image} price={element.price} productName={element.productName} />)
-      }
-    </div>
 );
-*/
+export default CourseGrid;
